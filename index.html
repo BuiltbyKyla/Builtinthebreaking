@@ -13,6 +13,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #efe8dc;
@@ -27,7 +31,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 2;
+      z-index: 3;
     }
 
     .logo {
@@ -54,35 +58,26 @@
       padding: 130px 8% 80px;
       position: relative;
       overflow: hidden;
-      background:
-        radial-gradient(circle at 72% 24%,
-          rgba(255,255,255,0.95) 0%,
-          rgba(255,223,140,0.72) 13%,
-          rgba(239,232,220,0.15) 34%),
-        linear-gradient(115deg, #e8dfd1 0%, #d8c9b5 55%, #9ba478 100%);
-    }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: 10%;
-      bottom: -12%;
-      width: 90px;
-      height: 78%;
-      background: #27351f;
-      transform: rotate(5deg);
-      border-radius: 50px;
-      box-shadow:
-        70px -45px 0 -26px #425438,
-        118px -135px 0 -30px #536849,
-        -55px -175px 0 -29px #536849;
-      opacity: 0.84;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(239, 232, 220, 0.96) 0%,
+          rgba(239, 232, 220, 0.86) 30%,
+          rgba(239, 232, 220, 0.38) 54%,
+          rgba(239, 232, 220, 0.04) 76%
+        ),
+        url("built-in-the-breaking-hero.png");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .hero-content {
       max-width: 780px;
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     .eyebrow {
@@ -136,17 +131,35 @@
     }
 
     @media (max-width: 700px) {
+      header {
+        padding: 24px 6%;
+      }
+
       nav {
         display: none;
+      }
+
+      .hero {
+        align-items: flex-end;
+        padding: 120px 7% 70px;
+        background-image:
+          linear-gradient(
+            0deg,
+            rgba(239, 232, 220, 0.98) 0%,
+            rgba(239, 232, 220, 0.82) 38%,
+            rgba(239, 232, 220, 0.08) 75%
+          ),
+          url("built-in-the-breaking-hero.png");
+
+        background-position: 63% center;
       }
 
       h1 {
         letter-spacing: -4px;
       }
 
-      .hero::after {
-        right: -20%;
-        opacity: 0.35;
+      .tagline {
+        font-size: 20px;
       }
     }
   </style>
